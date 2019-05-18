@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+    <title> caeser cipher </title>
+</head>
+<body>
+{% block body %}
+	<h1>Caesar cipher</h1>
+  <form method="POST" action="/">
+    <label>Text:</label>
+      <input type="text" name="text" value="{{ text }}" > <br>
+    <label>key: </label>
+    <input type="number" min=1 max=26 name="shift" value="{{ shift or 1 }}"> <br>
+    <button type="submit" name="decrypt" class="red" value="1"> decrypt </button>
+  </form>
+  {% if result %}
+    <pre>{{ result }}</pre>
+  {% endif %}
+{% endblock %}
+
+</body>
+</html>
